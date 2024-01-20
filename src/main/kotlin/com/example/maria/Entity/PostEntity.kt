@@ -15,5 +15,5 @@ data class PostEntity(
     val name: String,
     val age: Int
 ){
-    constructor() : this(0, "", 0)
+    //constructor() : this(0, "", 0)
 }

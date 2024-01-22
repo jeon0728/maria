@@ -5,6 +5,8 @@ import com.example.maria.service.PostService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.ui.Model
+import org.springframework.ui.set
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -15,7 +17,7 @@ class PostController {
     private lateinit var postService: PostService
 
     @GetMapping
-    fun getAllPosts(): ResponseEntity<List<PostEntity>> {
+    fun getAllPosts(model: Model): ResponseEntity<List<PostEntity>> {
         val posts = postService.getAllPosts()
         return ResponseEntity(posts, HttpStatus.OK)
     }
